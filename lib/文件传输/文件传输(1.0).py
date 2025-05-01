@@ -1,8 +1,18 @@
 try:
-	import socket,json,os,colorama
+	import socket,json,os,colorama,requests
 	from tqdm import tqdm
 except Exception:
-	print('错误:导入模块失败，确保有以下模块:\nsocket,json,os,colorama,tqdm\n在终端输入以导入模块，命令为:\npip install example\n其中example为模块名')
+	print('错误:导入模块失败，确保有以下模块:\nsocket,json,os,colorama,tqdm,requests\n在终端输入以导入模块，命令为:\npip install example\n其中example为模块名')
+def check(now):
+    resp=requests.get("http://tianzhuling.github.io/lib/文件传输/index.txt")
+    if now < float(resp.split("\n")[0]):
+	end=input(f"目前版本为{str(now)}，最高版本为{resp.split('\n')[0]}是否更新(Y/n)")
+	if end="Y":
+	    resp=requests.get(f"http://tianzhuling.github.io/lib/文件传输/文件传输({resp.split('\n')[0]}).py")
+	    with open(__file__,"wt",encoding="utf-8")as f:
+		f.write(resp.content.decode("utf-8"))
+	    print("更新成功")
+	    exit()
 def bytes_to_human_readable(num_bytes):
     units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
     size = float(num_bytes)
@@ -117,4 +127,5 @@ def main():
 			elif mode=='2':
 				get_file(server)
 if __name__=='__main__':
+	check(1.0)
 	main()
