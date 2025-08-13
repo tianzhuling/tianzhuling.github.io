@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSharpPatchDroid官方文档</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+
+<body>
+  <header>
+  <h1><span>CSharpPatchDroid官方文档</span> <img src="icon.png" alt="应用图标" /></h1>
+  </header>
+  <h2>作品简介</h2>
+  <h3>一句话概括</h3>
+  <span> <strong>CSharpPatchDroid</strong> 是一个<strong>安卓平台</strong>上的<strong>.NET逆向</strong>工具</span>
+  <h3>详情</h3>
+  <span>这是一款<strong>免费</strong>且集成反编译，回编译等功能，为在<strong>安卓</strong>上<strong>逆向.NET工程</strong>而<strong>量身打造</strong>的安卓软件<strong>CSharpPatchDroid</strong>。内部采用<strong>命令行模式</strong>，较为直观。支持<strong>UnityC#代码</strong>逆向与修改，简单.NET程序反编译。<strong>自动补全依赖</strong>，<strong>自动匹配C#与.NET版本</strong>等功能
+  <h2>如何下载</h2>
+  <h3>推荐下载</h3>
+  <ol>
+    <il>P2P(点对点)下载<a href="https://tianzhuling.github.io/CSharpPatchDroid/v1.0/p2p/CSharpPatchDroid_v1.0_arm64.torrent">点击此处下载.torrent文件</a></il>
+    <il>Github Release下载<a href="https://github.com/tianzhuling/CSharpPatchDroid/releases/tag/v1.0">点击此处跳转至Github</a></il>
+    
+  </ol>
+  <h3>备用下载</h3>
+  <ol>
+    <il>城通网盘 (访问密码是 <strong>1182</strong> )<a href="https://url72.ctfile.com/f/65372172-8416126722-bc39a2?p=1182">点击跳转</a></il>
+    <il>蓝奏云 (访问密码是 <strong>92ng</strong> 将后缀名转为.apk再安装) <a href="https://wwgc.lanzn.com/b01391wlyd">点击跳转</a></il>
+  <ol>
+  <h2>哈希对照表</h2>
+  <table>
+    <tr>
+      <th>算法</th>
+      <th>值</th>
+    </tr>
+    <tr>
+      <td>MD5</td>
+      <td>b5d7a36b4aae48f18a0ac712e2c39376</td>
+    </tr>
+    <tr>
+      <td>SHA1</td>
+      <td>c9832fd4b656aa7ebdeddce7220b1d5562bb9200</td>
+    </tr>
+    <tr>
+      <td>SHA256</td>
+      <td>736ad8a75d94c2c8196dc0828a7becb568ce3b7206ac59a0629aaaeb5bf7e09f</td>
+    </tr>
+    <tr>
+      <td>CRC32</td>
+      <td>f142115e</td>
+    </tr>
+  </table>
+  <h2>使用方法</h2>
+  <h3>整体用法</h3>
+  <span>本软件用<strong>非传统命令行</strong>的方式与用户交互，初始化好后，提示用户输入<strong>命令</strong>，输入完命令后，提示填写<strong>参数</strong>，<strong>部分参数</strong>可留空，填写完参数后便会运行</span>
+  <h3>参数命令</h3>
+  <table>
+    <tr>
+      <th>参数命令名</th>
+      <th>功能</th>
+      <th>版本支持</th>
+    </tr>
+    <tr>
+      <td>/over</td>
+      <td>立即结束当前的参数填充，将剩下参数都设置为空</td>
+      <td>v1.0引入</td>
+    </tr>
+    <tr>
+      <td>/skip</td>
+      <td>跳过当前参数填充，到下一个参数填充，相当于直接回车</td>
+      <td>v1.0引入</td>
+    </tr>
+    <tr>
+      <td>/quit</td>
+      <td>用于在参数填充时，临时撤销该命令</td>
+      <td>v1.0引入</td>
+    </tr>
+  </table>
+  <h3>命令</h3>
+  <table>
+    <tr>
+      <th>命令</th>
+      <th>功能</th>
+      <th>参数</th>
+      <th>版本</th>
+    </tr>
+    <tr>
+      <td>create</td>
+      <td>用于创建一个反编译项目</td>
+      <td>必填"dll路径", "C#版本", "框架(.NETCOREAPP,.NETSTANDARD,.NETFRAMEWORK,SILVERLIGHT)默认.NETFRAMEWORK", "框架版本", "项目名称", "输出根路径(默认在/storage/emulated/0/CSharpPatchDroidOutput/projects)"</td>
+      <td>v1.0</td>
+    </tr>
+    <tr>
+      <td>sethome</td>
+      <td>用于设置HOME路径(已弃用)</td>
+      <td>必填"新HOME路径"</td>
+      <td>测试版本引入，v1.0弃用</td>
+    </tr>
+    <tr>
+      <td>homepath</td>
+      <td>用于获取HOME路径</td>
+      <td>无参数</td>
+      <td>v1.0</td>
+    </tr>
+    <tr>
+      <td>updateproject</td>
+      <td>用于回编译项目而不指定.csproj位置，现已停止维护该命令，取而代之的是update</td>
+      <td>必填"项目名称", "根目录路径(HOME目录，默认/storage/emulated/0/CSharpPatchDroidOutput/projects)"</td>
+      <td>v1.0引入，v1.0版本不再维护</td>
+      
+    </tr>
+    <tr>
+      <td>update</td>
+      <td>用于回编译项目</td>
+      <td>必填"项目名称", "根目录路径(HOME目录，默认/storage/emulated/0/CSharpPatchDroidOutput/projects)", ".csproj文件路径(默认自动查找)"</td>
+      <td>v1.0</td>
+    </tr>
+    <tr>
+      <td>clear</td>
+      <td>清除/storage/emulated/0/CSharpPatchDroidOutPut的所有内容</td>
+      <td>三次确认Y/n</td>
+      <td>v1.0</td>
+    </tr>
+    <tr>
+      <td>exit</td>
+      <td>退出程序</td>
+      <td>无参数</td>
+      <td>v1.2</td>
+    </tr>
+    <tr>
+      <td>restart</td>
+      <td>重启</td>
+      <td>无参数</td>
+      <td>v1.2</td>
+    </tr>
+    <tr>
+      <td>resetsettings</td>
+      <td>重置设置</td>
+      <td>无参数</td>
+      <td>v1.2</td>
+    </tr>
+  </table>
+  <span>在本表格参数前有<strong>"必填"</strong>的为<strong>必填参数</strong>，其余皆为<strong>选填参数</strong></span>
+  <h3>概念</h3>
+  <ol>
+    <il>HOME路径，默认/storage/emulated/0/CSharpPatchDroidOutPut/projects，反编译项目的通用根目录，可通过修改/storage/emulated/0/CSharpPatchDroidOutPut/settings.json来修改</il>
+    <il>
+    <il>普通日志输出，使用此软件时除编译阶段的输出，路径在/storage/emulated/0/CSharpPatchDroidOutPut/log.txt</il>
+    <il>构造日志输出，路径在编译阶段的日志输出，路径在/storage/emulated/0/CSharpPatchDroidOutPut/buildLog.txt</il>
+  </ol>
+  <h3>运行设置</h3>
+  <table>
+    <tr>
+      <th>选项</th>
+      <th>默认值</th>
+      <th>功能</th>
+    </tr>
+    <tr>
+      <td>HOME</td>
+      <td>/storage/emulated/0/CSharpPatchDroidOutPut/projects</td>
+      <td>反编译项目的默认路径</td>
+    </tr>
+    <tr>
+      <td>relativePathMode</td>
+      <td>false</td>
+      <td>相对路径模式，该模式下反编译项目根目录是dll文件的兄弟目录，在<strong>当前会话</strong>中，update不再需要指定项目根目录，效果每次会话结束<strong>重置</strong></td>
+    </tr>
+    <tr>
+      <td>autoComplete</td>
+      <td>true</td>
+      <td>编译失败时自动补全</td>
+    </tr>
+    <tr>
+      <td>autoCompleteReference</td>
+      <td>true</td>
+      <td>具体到自动补全依赖</td>
+    </tr>
+    
+  </table>
+  <span>这些设置在<strong>/storage/emulated/0/CSharpPatchDroidOutPut/settings.json</strong>中</span>
+  <h2>关于作者</h2>
+  
+  <h3>联系方式</h3>
+  <span class="account">tianzhuling@outlook</span>
+  <h3>Github账号</h3>
+  <span class="account">tianzhuling</span>
+  <script src="main.js"></script>
+</body>
+</html>
