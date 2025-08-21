@@ -30,29 +30,6 @@
     <il>城通网盘 (访问密码是 <strong>1182</strong> )<a href="https://url72.ctfile.com/d/65372172-154364193-925301?p=1182">点击跳转</a></il>
     <il>蓝奏云 (访问密码是 <strong>92ng</strong> 将后缀名转为.apk再安装) <a href="https://wwgc.lanzn.com/b01391wlyd">点击跳转</a></il>
   <ol>
-  <h2>哈希对照表</h2>
-  <table>
-    <tr>
-      <th>算法</th>
-      <th>值</th>
-    </tr>
-    <tr>
-      <td>MD5</td>
-      <td>b5d7a36b4aae48f18a0ac712e2c39376</td>
-    </tr>
-    <tr>
-      <td>SHA1</td>
-      <td>c9832fd4b656aa7ebdeddce7220b1d5562bb9200</td>
-    </tr>
-    <tr>
-      <td>SHA256</td>
-      <td>736ad8a75d94c2c8196dc0828a7becb568ce3b7206ac59a0629aaaeb5bf7e09f</td>
-    </tr>
-    <tr>
-      <td>CRC32</td>
-      <td>f142115e</td>
-    </tr>
-  </table>
   <h2>使用方法</h2>
   <h3>整体用法</h3>
   <span>本软件用<strong>非传统命令行</strong>的方式与用户交互，初始化好后，提示用户输入<strong>命令</strong>，输入完命令后，提示填写<strong>参数</strong>，<strong>部分参数</strong>可留空，填写完参数后便会运行</span>
@@ -146,7 +123,7 @@
   <span>在本表格参数前有<strong>"必填"</strong>的为<strong>必填参数</strong>，其余皆为<strong>选填参数</strong></span>
   <h3>概念</h3>
   <ol>
-    <il>HOME路径，默认/storage/emulated/0/CSharpPatchDroidOutPut/projects，反编译项目的通用根目录，可通过修改/storage/emulated/0/CSharpPatchDroidOutPut/settings.json来修改</il>
+    <il>HOME路径，默认/storage/emulated/0/CSharpPatchDroidOutPut/projects，反编译项目的通用根目录，可通过修改/storage/emulated/0/CSharpPatchDroidOutPut/settings.json来修改，在绝对路径模式下不存在这一概念</il>
     <il>
     <il>普通日志输出，使用此软件时除编译阶段的输出，路径在/storage/emulated/0/CSharpPatchDroidOutPut/log.txt</il>
     <il>构造日志输出，路径在编译阶段的日志输出，路径在/storage/emulated/0/CSharpPatchDroidOutPut/buildLog.txt</il>
@@ -177,6 +154,12 @@
       <td>autoCompleteReference</td>
       <td>true</td>
       <td>具体到自动补全依赖</td>
+    </tr>
+    <tr>
+      <td>absolutePathMode</td>
+      <td>true</td>
+      <td>绝对路径模式</td>
+      <td>
     </tr>
     
   </table>
